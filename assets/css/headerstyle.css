@@ -1,0 +1,222 @@
+
+section {
+    padding: 0;
+    height: 98vh; 
+    background-image: url(../images/header.png);
+    background-size: cover;
+    background-position: top;
+    position: relative;
+    clip-path: polygon(100% 0, 100% 83%, 78% 90%, 30% 83%, 0 90%, 0 0);
+}
+ /* ==== */
+ @media only screen and (max-width: 75em){
+    section {
+        height: 50vh!important;
+    }
+}
+
+ @media only screen and (max-width: 37.5em){
+    section {
+        /* clip-path: polygon(100% 0, 100% 91%, 8% 91%, 40% 83%, 0 90%, 0 0); */
+        height: 50vh;
+        clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 80% 85%, 75% 100%, 55% 85%, 0 85%);
+    }
+}
+
+svg:not(:root){
+    overflow: hidden;
+}
+.svg_grey svg {
+    fill: #424747a8;
+    width: 101%;
+}
+
+
+
+.header__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem;
+}
+
+.header__text-box {
+    position: absolute;
+    top: 42%;
+    left: 31%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-weight: 500;
+}
+
+.heading-primary {
+    color:black;
+    text-transform: uppercase;
+    backface-visibility: hidden;
+    margin-bottom: 4rem;
+    text-align: left;
+}
+
+.heading-primary--main {
+    display: block;
+    font-size: 5rem;
+    font-weight: 500;
+    letter-spacing: 2rem;
+    animation-name: moveFocus;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+}
+
+.heading-primary--sub {
+    display: block;
+    font-size: 2.5rem;
+    text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4), 0px 8px 13px rgba(0, 0, 0, 0.1), 0px 18px 23px rgba(0, 0, 0, 0.1);;
+    font-weight: 700;
+    letter-spacing: 1.75rem;
+    animation: moveInRight 3s ease-out;
+}
+
+@media only screen and (max-width: 37.5em){
+  
+    .heading-primary--main{
+        font-size: 2.6rem;
+        letter-spacing: 1.2rem;
+        margin-bottom: 5px;
+    }
+    .heading-primary--sub{
+        font-size: 1.7rem;
+        letter-spacing: 1.1rem;
+    }
+}
+
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(-10rem);
+    }
+
+    80% {
+        transform: translateX(1rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(3rem);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveFocus {
+    0% {
+      letter-spacing: 1em;
+      -webkit-transform: translateZ(300px);
+              transform: translateZ(300px);
+      -webkit-filter: blur(12px);
+              filter: blur(12px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateZ(12px);
+              transform: translateZ(12px);
+      -webkit-filter: blur(0);
+              filter: blur(0);
+      opacity: 1;
+    }
+  }
+
+
+
+.btn:link,
+.btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1rem 2.2rem;
+    display: inline-block;
+    border-radius: 10rem;
+    transition: all .2s;
+    position: relative;
+    font-size: 1.6rem;
+}
+
+@media only screen and (max-width: 37.5em){
+    .btn:link {
+        padding: .5rem 1.7rem;
+        font-size: 1.2rem;
+    }
+}
+
+.btn-resume:link{
+    text-decoration: none;
+
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 1.5rem rgba(34, 109, 122, 0.2);
+    color: rgba(255, 119, 48, 0.85);
+}
+
+.btn:active {
+    transform: translateY(-1px);
+}
+
+.btn--white {
+    background-color: #fafafa;
+    color: rgb(1, 36, 41);
+    font-family: 'Marcellus', serif;
+    font-weight: 500;
+}
+
+.btn::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+}
+
+.btn--white::after {
+    background-color: #0080e9;
+}
+
+.btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
+.btn--animated {
+    animation: moveInBottom 1s ease-out .75s;
+    animation-fill-mode: backwards;
+}
+
+@media only screen and (max-width: 75em){
+    .header__text-box {
+        left: 36%;
+    }
+}
+
+@media (max-width: 479px) and (min-width: 240px){
+    .header__text-box {
+        left: 50%;
+        text-align: left;
+    }
+    .header-area {
+        padding: 10px !important;
+        width: 100% !important;
+    }
+}
